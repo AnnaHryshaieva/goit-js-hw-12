@@ -65,6 +65,14 @@ async function onClick() {
 
   checkClassList();
 
+  const height =
+    refs.myGallery.firstElementChild.getBoundingClientRect().height;
+
+  scrollBy({
+    behavior: 'smooth',
+    top: height * 2,
+  });
+
   if (refs.myGallery.children.length === response.totalHits) {
     messageInfo();
   }
