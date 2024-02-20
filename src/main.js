@@ -13,6 +13,12 @@ const refs = {
   btn: document.querySelector('.btn'),
 };
 
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionType: 'attr',
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
 let inputValue;
 let page;
 let maxPage;
@@ -97,12 +103,6 @@ function renderGalleries(array) {
   const markup = templateGalleries(array);
 
   refs.myGallery.insertAdjacentHTML('beforeend', markup);
-
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionType: 'attr',
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
 
   lightbox.refresh();
 }
